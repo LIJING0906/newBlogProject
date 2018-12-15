@@ -207,4 +207,9 @@ export default {
       transform: none;
       -webkit-transform:none;
   }
+  #elerenderheader .upload-demo{
+    width: 80px;
+    display: inline-block;
+    margin-top: 20px;
+  }
 </style>

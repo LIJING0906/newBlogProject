@@ -14,8 +14,8 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <top-title :title-text="titleText" v-if="titleText&&keyPath.length!=0"></top-title>
-        <h3>
+        <top-title :title-text="titleText" v-if="titleText&&keyPath.length!=0&&$route.path!='/'"></top-title>
+        <h3 v-if="$route.path=='/'">
           这个项目是平时工作中遇到的小问题。<br><br>
           把它们都写下来，以免以后换公司不记得曾经写过的代码。<br><br>
           同时，也是让自己学会用脚手架vue-cli搭建一个项目。
