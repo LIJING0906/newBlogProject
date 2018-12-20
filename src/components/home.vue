@@ -15,11 +15,14 @@
       </el-aside>
       <el-main>
         <top-title :title-text="titleText" v-if="titleText&&keyPath.length!=0&&$route.path!='/'"></top-title>
-        <h3 v-if="$route.path=='/'">
-          这个项目是平时工作中遇到的小问题。<br><br>
-          把它们都写下来，以免以后换公司不记得曾经写过的代码。<br><br>
-          同时，也是让自己学会用脚手架vue-cli搭建一个项目。
-        </h3>
+        <div v-if="$route.path=='/'">
+          <h2>这个小项目的由来：</h2>
+          <ol type="I">
+            <li>平时工作中遇到的小问题都写下来，以免忘记同时也是知识总结。</li>
+            <li>业余写博客需要写一些简单的demo来印证和说明。</li>
+            <li>让自己学会用webpack3.x搭配脚手架vue-cli2.0搭建一个项目。</li>
+          </ol>
+        </div>
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -115,6 +118,17 @@ export default {
       }
       .el-submenu__title{
         color: $text_black_color;
+      }
+    }
+  }
+  .el-main{
+    ol{
+      width: 470px;
+      margin: 0 auto;
+      padding-left: 30px;
+      li{
+        text-align: left;
+        line-height: 40px;
       }
     }
   }
