@@ -1,0 +1,28 @@
+.my-gray-bg{
+    .message-info-warn, .message-info-success, .message-info-error{
+        background: #FFFBF2;
+        border-radius: $size-border-radius;
+        padding: 0px 15px;
+        height: 50px;
+        .el-message__icon {
+            display: none;
+        }
+        .el-message__content {
+            font-size: $size-font-title-h2;
+            color: $color-orange;
+        }
+        .el-message__closeBtn {
+            color: $color-icon-input;
+        }
+    }
+    .message-info-warn {
+        border: 1px solid #FFBB15;
+    }
+    .message-info-success {
+        border: 1px solid #7AD813;
+    }
+    
+    .message-info-error {
+        border: 1px solid #F2242E;
+    }
+}

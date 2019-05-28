@@ -43,6 +43,7 @@ export default {
           firstIndex: 'VUE', 
           routesInfo: [
             {title: 'vue.js', index: '/testvueis', displayName: 'is特性'},
+            {title: 'mixins', index: '/mixins', displayName: '混入(mixins)'},
             // {title: 'vuex', index: 'vuex', displayName: 'vuex'},
             // {title: 'vueRouter', index: 'vueRouter', displayName: 'vueRouter'},
           ]

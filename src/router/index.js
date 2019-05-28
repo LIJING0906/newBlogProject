@@ -6,6 +6,7 @@ import elerenderheader from '@/components/eleRenderHeader/elerenderheader'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -21,7 +22,12 @@ export default new Router({
         {
           path: '/testvueis',
           name: 'testvueis',
-          component: () => import('@/components/testvueis/testvueis.vue')
+          component: () => import('@/components/vue/testvueis/testvueis.vue')
+        },
+        {
+          path: '/mixins',
+          name: 'mixins',
+          component: () => import('@/components/vue/mixins/mixins.vue')
         },
         {
           path: '/css3aimation&transition',

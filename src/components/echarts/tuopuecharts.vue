@@ -5,6 +5,7 @@
 </template>
 <script>
 import webkitDep from './webkitDep4.json'
+// var echarts = require('echarts'); //  如果不全局注册echarts，那么就需要局部引入echarts
 export default {
     data(){
         return {
@@ -12,6 +13,7 @@ export default {
         }
     },
     mounted () {
+        // let myChart = echarts.init(document.getElementById('main')); // 如果不全局注册echarts，那么就需要局部引入echarts，init如此定义
         let myChart = this.$echarts.init(document.getElementById('main'));
         myChart.showLoading();
             myChart.hideLoading();
