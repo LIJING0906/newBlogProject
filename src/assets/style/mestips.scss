@@ -1,0 +1,35 @@
+.message-info-warn, .message-info-success, .message-info-error{
+    border-radius: $size_border_radius;
+    padding: 0px 15px;
+    height: 50px;
+    .el-message__icon {
+        display: none;
+    }
+    .el-message__content {
+        font-size: $size_font_title_h2;
+    }
+    .el-message__closeBtn {
+        color: $color_icon_input;
+    }
+}
+.message-info-warn {
+    background: #FFFBF2;
+    border: 1px solid #FFBB15;
+    .el-message__content {
+        color: $color_orange;
+    }
+}
+.message-info-success {
+    background: #F9FCF6;
+    border: 1px solid #7AD813;
+    .el-message__content {
+        color: $color_green;
+    }
+}
+.message-info-error {
+    background: #FEF4F4;
+    border: 1px solid #F2242E;
+    .el-message__content {
+        color: $color_red;
+    }
+}

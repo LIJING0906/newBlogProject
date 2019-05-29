@@ -31,7 +31,7 @@ exports.cssLoaders = function (options) {
   ////////全局引用sass变量
   // 全局文件引入 当然只想编译一个文件的话可以省去这个函数
   function resolveResource(name) {
-    return path.resolve(__dirname, '../src/assets/css/' + name);
+    return path.resolve(__dirname, '../src/assets/style/' + name);
   }
   function generateSassResourceLoader() {
     var loaders = [
@@ -40,8 +40,8 @@ exports.cssLoaders = function (options) {
       {
         loader: 'sass-resources-loader',
         options: {
-          // 多个文件时用数组的形式传入，单个文件时可以直接使用 path.resolve(__dirname, '../static/style/common.scss'
-          resources: [resolveResource('common.scss')]  
+          // 多个文件时用数组的形式传入，单个文件时可以直接使用 path.resolve(__dirname, '../static/style/variable.scss'
+          resources: [resolveResource('variable.scss')]  
         }
       }
       ];

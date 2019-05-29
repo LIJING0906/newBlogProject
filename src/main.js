@@ -6,8 +6,8 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import echarts from 'echarts'
-// import './assets/css/variable.scss' // 定义变量的scss
-import './assets/css/common.scss'
+import './assets/style/variable.scss' // 定义变量的scss
+import './assets/style/mestips.scss' // 弹框消息提示样式
 
 Vue.config.productionTip = false
 

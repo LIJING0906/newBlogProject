@@ -1,5 +1,5 @@
 <template>
-    <div class="mixin" style="margin-top:50px;">
+    <div class="mixin" style="margin-top:200px;">
         <el-button @click="messageTips('success')">点击弹出成功的消息提示</el-button>
         <el-button @click="messageTips('error')">点击弹出失败的消息提示</el-button>
         <el-button @click="messageTips('warn')">点击弹出警告的消息提示</el-button>
@@ -16,7 +16,7 @@ export default {
             } else if (type === 'error') {
                 this.messageError('失败');
             } else {
-                this.messageError('警告');
+                this.messageWarning('警告');
             }
         }
     }
