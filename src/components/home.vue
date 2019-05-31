@@ -2,7 +2,7 @@
   <div id="home">
     <el-container>
       <el-aside width="200px">
-        <el-menu :default-openeds="keyPath" default-active="$route.path" router active-text-color="#66CCFF"
+        <el-menu :default-openeds="keyPath" :default-active="defaultActive" router active-text-color="#66CCFF"
           @open="handleOpen" @close="handleClose" @select="handleSelect" :unique-opened="true">
           <el-submenu :index="item.firstIndex" v-for="(item, ind) in RoutesInfos" :key="ind">
             <template slot="title"><i class="el-icon-menu"></i>{{item.firstIndex}}</template>
@@ -14,8 +14,8 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <top-title :title-text="titleText" v-if="titleText&&keyPath.length!=0&&$route.path!='/'"></top-title>
-        <div v-if="$route.path=='/'">
+        <top-title :title-text="titleText" v-if="$route.path!='/'"></top-title>
+        <div v-else>
           <h2>这个小项目的由来：</h2>
           <ol type="I">
             <li>平时工作中遇到的小问题都写下来，以免忘记同时也是知识总结。</li>
@@ -44,6 +44,7 @@ export default {
           routesInfo: [
             {title: 'vue.js', index: '/testvueis', displayName: 'is特性'},
             {title: 'mixins', index: '/mixins', displayName: '混入(mixins)'},
+            {title: 'directive自定义指令', index: '/directive', displayName: 'directive自定义指令'},
             // {title: 'vuex', index: 'vuex', displayName: 'vuex'},
             // {title: 'vueRouter', index: 'vueRouter', displayName: 'vueRouter'},
           ]
@@ -69,6 +70,11 @@ export default {
       ],
     }
   },
+  computed: {
+    defaultActive() {
+      return this.$route.meta.active;
+    }
+  },
   components: {
     topTitle
   },
@@ -88,7 +94,24 @@ export default {
           }
         }
       }
+    },
+    // 刷新页面title显示
+    fresh() {
+      if (this.$route.path === '/') {
+        return;
+      }
+      for (const x in this.RoutesInfos) {
+        for (const y in this.RoutesInfos[x].routesInfo) {
+          if (this.RoutesInfos[x].routesInfo[y].index === this.$route.path) {
+            this.titleText = `${this.RoutesInfos[x].firstIndex} > ${this.RoutesInfos[x].routesInfo[y].displayName}`;
+            break;
+          }
+        }
+      }
     }
+  },
+  mounted() {
+    this.fresh();
   }
 }
 </script>
@@ -123,6 +146,7 @@ export default {
     }
   }
   .el-main{
+    background: $background_color;
     ol{
       width: 470px;
       margin: 0 auto;
